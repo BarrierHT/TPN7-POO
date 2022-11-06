@@ -17,12 +17,7 @@ public class Principal {
 
             System.out.println("Ingrese su opcion: ");
 
-            try {
-                option = scanner.nextInt();
-            } catch (Exception e) {
-                scanner.nextLine();
-                System.out.println("\nIngrese un numero de opcion");
-            }
+            option = scanner.nextInt();
 
             if (option == 1) {
 
