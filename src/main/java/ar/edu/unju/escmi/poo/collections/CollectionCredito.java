@@ -1,5 +1,6 @@
 package ar.edu.unju.escmi.poo.collections;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,15 +13,23 @@ public class CollectionCredito {
     public CollectionCredito() {
 
     }
-
-    public static List<Credito> getCreditos() {
-        return creditos;
+    
+    public static void getCreditos() {
+    	if(creditos == null) {
+    		creditos = new ArrayList<Credito>();
+    		creditos.add(new Credito());
+    		creditos.add(new Credito());
+    		creditos.add(new Credito());
+    		creditos.add(new Credito());
+    	}
     }
-
+    
     public static void setCreditos(List<Credito> creditos) {
         CollectionCredito.creditos = creditos;
     }
 
+    
+    
     public static void agregarCredito(Credito credito) {
 
         creditos.add(credito);
