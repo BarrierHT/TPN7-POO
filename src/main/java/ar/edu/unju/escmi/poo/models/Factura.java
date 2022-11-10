@@ -1,13 +1,14 @@
 package ar.edu.unju.escmi.poo.models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Factura {
 
     public LocalDate fecha;
     public long nroFactura;
     private Cliente cliente;
-    private Detalle detalles;
+    private List<Detalle> detalles = new ArrayList<Detalle>();
 
     public Factura() {
 
@@ -53,6 +54,10 @@ public class Factura {
     }
 
     public double calcularTotal() {
-        return 1;
+        double total = 0;
+        for (Detalle detalle : detalles) {
+            total += detalle.getImporte();
+        }
+        return total;
     }
 }

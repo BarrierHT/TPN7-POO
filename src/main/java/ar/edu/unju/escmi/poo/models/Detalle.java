@@ -14,6 +14,7 @@ public class Detalle {
         this.cantidad = cantidad;
         this.importe = importe;
         this.producto = producto;
+        calcularImporte();
     }
 
     public int getCantidad() {
@@ -40,7 +41,7 @@ public class Detalle {
         this.producto = producto;
     }
 
-    public double calcularImporte() {
-        return 1;
+    public void calcularImporte() {
+        this.setImporte(this.cantidad * this.producto.getPrecioUnitario());
     }
 }

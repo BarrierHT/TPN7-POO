@@ -5,7 +5,7 @@ import java.util.List;
 
 import ar.edu.unju.escmi.poo.models.Factura;
 
-public class CollectionFactura {
+public abstract class CollectionFactura {
 
     public static List<Factura> facturas = new ArrayList<Factura>();
 
@@ -14,6 +14,10 @@ public class CollectionFactura {
     }
 
     public static List<Factura> getFacturas() {
+        List<Detalle> detalles = new ArrayList<Detalle>();
+
+        // ToDo Agregar Facturas y detalles
+
         return facturas;
     }
 

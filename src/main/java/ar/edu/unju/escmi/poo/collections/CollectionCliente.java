@@ -5,7 +5,7 @@ import java.util.List;
 
 import ar.edu.unju.escmi.poo.models.Cliente;
 
-public class CollectionCliente {
+public abstract class CollectionCliente {
 
     public static List<Cliente> clientes = new ArrayList<Cliente>();
 
@@ -14,6 +14,9 @@ public class CollectionCliente {
     }
 
     public static List<Cliente> getClientes() {
+
+        // ToDo Agregar clientes
+
         return clientes;
     }
 

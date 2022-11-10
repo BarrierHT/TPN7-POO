@@ -6,7 +6,7 @@ import java.util.List;
 import ar.edu.unju.escmi.poo.models.Producto;
 import ar.edu.unju.escmi.poo.models.Stock;
 
-public class CollectionStock {
+public abstract class CollectionStock {
 
     public static List<Stock> stocks = new ArrayList<Stock>();
 
@@ -14,7 +14,7 @@ public class CollectionStock {
         CollectionStock.stocks = stocks;
     }
 
-    public List<Stock> getStocks() {
+    public static List<Stock> getStocks() {
         return stocks;
     }
 
