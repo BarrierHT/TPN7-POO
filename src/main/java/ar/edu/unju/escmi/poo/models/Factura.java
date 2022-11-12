@@ -20,6 +20,7 @@ public class Factura {
         this.nroFactura = nroFactura;
         this.cliente = cliente;
         this.detalles = detalles;
+        calcularTotal();
     }
 
     public LocalDate getFecha() {

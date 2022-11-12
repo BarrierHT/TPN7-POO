@@ -32,13 +32,9 @@ public class ProductoTest extends TestCase{
     }
 
     @Test
-    void testCalcularStockProducto() { // Todo Validar la reduccion y aumento de stock un producto
+    void testCalcularStockProducto() { // ToDo Validar la reduccion y aumento de stock un producto
     	assertEquals(1,2);
     }
 
-    @Test
-    void testCalcularProductoValido() { // ToDo Calcular si el precio de un producto ingresado es valido, y si todos los
-                                        // productos tienen codigo distinto
-
-    }
+ 
 }
