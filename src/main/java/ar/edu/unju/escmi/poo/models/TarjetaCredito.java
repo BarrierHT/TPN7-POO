@@ -2,18 +2,18 @@ package ar.edu.unju.escmi.poo.models;
 
 import java.time.LocalDate;
 
-public class TarjetaDeCredito {
+public class TarjetaCredito {
 
     public long numero;
     public LocalDate fechaCaducacion;
     public String nombreTitular;
     public double limiteCompra;
 
-    public TarjetaDeCredito() {
+    public TarjetaCredito() {
 
     }
 
-    public TarjetaDeCredito(long numero, LocalDate fechaCaducacion, String nombreTitular, double limiteCompra) {
+    public TarjetaCredito(long numero, LocalDate fechaCaducacion, String nombreTitular, double limiteCompra) {
         this.numero = numero;
         this.fechaCaducacion = fechaCaducacion;
         this.nombreTitular = nombreTitular;

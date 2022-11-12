@@ -7,20 +7,25 @@ public class Cliente {
     public String apellido;
     public String direccion;
     public int telefono;
+    public TarjetaCredito tarjeta;
 
     public Cliente() {
 
     }
 
-    public Cliente(long dni, String nombre, String apellido, String direccion, int telefono) {
-        this.dni = dni;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.direccion = direccion;
-        this.telefono = telefono;
-    }
+    
+    public Cliente(long dni, String nombre, String apellido, String direccion, int telefono, TarjetaCredito tarjeta) {
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.tarjeta = tarjeta;
+	}
 
-    public long getDni() {
+
+
+	public long getDni() {
         return dni;
     }
 
@@ -51,8 +56,18 @@ public class Cliente {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+    
+    public TarjetaCredito getTarjeta() {
+		return tarjeta;
+	}
 
-    public int getTelefono() {
+
+	public void setTarjeta(TarjetaCredito tarjeta) {
+		this.tarjeta = tarjeta;
+	}
+
+
+	public int getTelefono() {
         return telefono;
     }
 

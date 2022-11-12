@@ -6,27 +6,27 @@ import java.util.List;
 
 public class Credito {
 
-    private TarjetaDeCredito tarjetaCredito;
+    private TarjetaCredito tarjetaCredito;
     private Factura factura;
     private List<Cuota> cuotas = new ArrayList<Cuota>();
-    private TarjetaDeCredito tarjeta;
+    private TarjetaCredito tarjeta;
 
     public Credito() {
 
     }
 
-    public Credito(TarjetaDeCredito tarjetaCredito, Factura factura, List<Cuota> cuotas, TarjetaDeCredito tarjeta) {
+    public Credito(TarjetaCredito tarjetaCredito, Factura factura, List<Cuota> cuotas, TarjetaCredito tarjeta) {
         this.tarjetaCredito = tarjetaCredito;
         this.factura = factura;
         this.cuotas = cuotas;
         this.tarjeta = tarjeta;
     }
 
-    public TarjetaDeCredito getTarjetaCredito() {
+    public TarjetaCredito getTarjetaCredito() {
         return tarjetaCredito;
     }
 
-    public void setTarjetaCredito(TarjetaDeCredito tarjetaCredito) {
+    public void setTarjetaCredito(TarjetaCredito tarjetaCredito) {
         this.tarjetaCredito = tarjetaCredito;
     }
 
@@ -42,11 +42,11 @@ public class Credito {
         this.cuotas = cuotas;
     }
 
-    public TarjetaDeCredito getTarjeta() {
+    public TarjetaCredito getTarjeta() {
         return tarjeta;
     }
 
-    public void setTarjeta(TarjetaDeCredito tarjeta) {
+    public void setTarjeta(TarjetaCredito tarjeta) {
         this.tarjeta = tarjeta;
     }
 

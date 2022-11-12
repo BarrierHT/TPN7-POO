@@ -13,9 +13,11 @@ import ar.edu.unju.escmi.poo.collections.CollectionFactura;
 import ar.edu.unju.escmi.poo.collections.CollectionStock;
 
 import ar.edu.unju.escmi.poo.models.Credito;
+import junit.framework.TestCase;
 
-public class ProductoTest {
+public class ProductoTest extends TestCase{
     @BeforeEach
+	protected
     void setUp() throws Exception {
 
         CollectionCliente.getClientes();
@@ -24,13 +26,14 @@ public class ProductoTest {
     }
 
     @AfterEach
+	protected
     void tearDown() throws Exception {
 
     }
 
     @Test
     void testCalcularStockProducto() { // Todo Validar la reduccion y aumento de stock un producto
-
+    	assertEquals(1,2);
     }
 
     @Test

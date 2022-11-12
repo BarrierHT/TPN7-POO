@@ -13,15 +13,18 @@ import ar.edu.unju.escmi.poo.collections.CollectionFactura;
 import ar.edu.unju.escmi.poo.collections.CollectionStock;
 
 import ar.edu.unju.escmi.poo.models.Credito;
+import ar.edu.unju.escmi.poo.models.Cuota;
+import junit.framework.TestCase;
 
 // import ar.edu.unju.escmi.poo.collections.CollectionTarjetaCredito;
 
 import java.util.Collection;
 
-public class CreditoTest { // ? Handle all Cuotas Troubles
+public class CreditoTest extends TestCase{ // ? Handle all Cuotas Troubles
     Credito credito;
 
     @BeforeEach
+	protected
     void setUp() throws Exception {
 
         CollectionCliente.getClientes();
@@ -34,24 +37,29 @@ public class CreditoTest { // ? Handle all Cuotas Troubles
     }
 
     @AfterEach
+	protected
     void tearDown() throws Exception {
 
     }
-    /*
-     * @Test
-     * void testValidarListaCuotas() { // Validar lista cuotas no es null
-     * 
-     * bool band = true;
-     * 
-     * credito.getCuotas().stream().forEach(cuota -> {
-     * if (!cuota) {
-     * band = false;
-     * break;
-     * }
-     * });
-     * 
-     * assertTrue(band);
-     * 
-     * }
-     */
+   
+      @Test
+      void testValidarListaCuotas() { // Validar lista cuotas no es null
+      
+      boolean band = true;
+      
+      for(Cuota cuota: credito.getCuotas()) {
+    	  if(cuota == null) band = false;
+      }
+      
+//      credito.getCuotas().stream().forEach(cuota -> {
+//    	  if (cuota == null) {
+//    	  	band = false;
+// 
+//	      }
+//      });
+      
+      assertTrue(band);
+      
+      }
+     
 }

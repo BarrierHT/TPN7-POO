@@ -26,7 +26,7 @@ public abstract class CollectionFactura {
         CollectionFactura.facturas = facturas;
     }
 
-    public static void agregarFacturas(Factura factura) {
+    public static void agregarFactura(Factura factura) {
         facturas.add(factura);
     }
 
