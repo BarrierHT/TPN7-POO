@@ -1,4 +1,4 @@
-package test.java.ar.edu.unju.escmi.poo.dominio;
+package ar.edu.unju.escmi.poo.dominio;
 
 import static org.junit.jupiter.api.Assertions.*;
 

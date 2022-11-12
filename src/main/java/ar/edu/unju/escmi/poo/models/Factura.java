@@ -2,6 +2,7 @@ package ar.edu.unju.escmi.poo.models;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Factura {
 
@@ -14,7 +15,7 @@ public class Factura {
 
     }
 
-    public Factura(LocalDate fecha, long nroFactura, Cliente cliente, Detalle detalles) {
+    public Factura(LocalDate fecha, long nroFactura, Cliente cliente, List<Detalle> detalles) {
         this.fecha = fecha;
         this.nroFactura = nroFactura;
         this.cliente = cliente;
@@ -45,11 +46,11 @@ public class Factura {
         this.cliente = cliente;
     }
 
-    public Detalle getDetalles() {
+    public List<Detalle> getDetalles() {
         return detalles;
     }
 
-    public void setDetalles(Detalle detalles) {
+    public void setDetalles(List<Detalle> detalles) {
         this.detalles = detalles;
     }
 

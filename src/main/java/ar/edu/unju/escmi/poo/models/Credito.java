@@ -15,11 +15,11 @@ public class Credito {
 
     }
 
-    public Credito(TarjetaDeCredito tarjetaCredito, Factura factura, Cuota cuotas) {
+    public Credito(TarjetaDeCredito tarjetaCredito, Factura factura, List<Cuota> cuotas, TarjetaDeCredito tarjeta) {
         this.tarjetaCredito = tarjetaCredito;
         this.factura = factura;
         this.cuotas = cuotas;
-        generarCuotas();
+        this.tarjeta = tarjeta;
     }
 
     public TarjetaDeCredito getTarjetaCredito() {
@@ -38,11 +38,7 @@ public class Credito {
         this.factura = factura;
     }
 
-    public Cuota getCuotas() {
-        return cuotas;
-    }
-
-    public void setCuotas(Cuota cuotas) {
+    public Credito(List<Cuota> cuotas) {
         this.cuotas = cuotas;
     }
 
@@ -71,5 +67,13 @@ public class Credito {
             cuotas.add(cuota);
         }
 
+    }
+
+    public List<Cuota> getCuotas() {
+        return cuotas;
+    }
+
+    public void setCuotas(List<Cuota> cuotas) {
+        this.cuotas = cuotas;
     }
 }

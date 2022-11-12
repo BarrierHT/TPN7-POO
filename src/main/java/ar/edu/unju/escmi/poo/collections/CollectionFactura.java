@@ -3,6 +3,7 @@ package ar.edu.unju.escmi.poo.collections;
 import java.util.ArrayList;
 import java.util.List;
 
+import ar.edu.unju.escmi.poo.models.Detalle;
 import ar.edu.unju.escmi.poo.models.Factura;
 
 public abstract class CollectionFactura {
