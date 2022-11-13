@@ -146,7 +146,7 @@ public class Principal {
 
                     Stock stock = CollectionStock.buscarStock(pro);
 
-                    if (stock != null) {
+                    if (stock.getCantidad() > 0) {
                         System.out.println("\n" + pro.toString());
                     }
                 }
@@ -163,7 +163,7 @@ public class Principal {
                         System.out.println("\nEl stock del producto: " + stock.getProducto().getDescripcion()
                                 + " es de: " + stock.getCantidad());
                     } else {
-                        System.out.println("\nNo hay stock del producto");
+                        System.out.println("\nNo se cargo stock del producto");
                     }
                 } else {
                     System.out.println("\nNo se encontro el producto");

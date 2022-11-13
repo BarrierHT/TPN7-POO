@@ -35,7 +35,7 @@ public abstract class CollectionStock {
             stocks.add(new Stock(28, CollectionProducto.productos.get(16)));
             stocks.add(new Stock(47, CollectionProducto.productos.get(17)));
             stocks.add(new Stock(33, CollectionProducto.productos.get(18)));
-
+            stocks.add(new Stock(0, CollectionProducto.productos.get(19)));
         }
     }
 
