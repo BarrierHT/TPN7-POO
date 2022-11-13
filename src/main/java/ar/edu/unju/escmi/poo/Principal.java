@@ -144,10 +144,11 @@ public class Principal {
 
                 for (Producto pro : products) {
 
-                    // ToDo mostrar solo productos que tengan stock
-                    // Stock stock = CollectionStock.buscarStock(pro);
+                    Stock stock = CollectionStock.buscarStock(pro);
 
-                    System.out.println("\n" + pro.toString());
+                    if (stock != null) {
+                        System.out.println("\n" + pro.toString());
+                    }
                 }
 
             } else if (option == 4) {
