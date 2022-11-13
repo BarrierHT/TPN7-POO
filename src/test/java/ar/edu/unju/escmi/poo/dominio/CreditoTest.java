@@ -52,7 +52,7 @@ public class CreditoTest extends TestCase { // ? Handle all Cuotas Troubles
 		Factura factura = new Factura();
 		factura.setDetalles(detalles);
 
-		credito = new Credito(null, factura, new ArrayList<Cuota>(), null);
+		credito = new Credito(null, factura, new ArrayList<Cuota>());
 
 		boolean band = true;
 

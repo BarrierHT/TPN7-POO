@@ -9,16 +9,14 @@ public class Credito {
 	private TarjetaCredito tarjetaCredito;
 	private Factura factura;
 	private List<Cuota> cuotas = new ArrayList<Cuota>();
-	private TarjetaCredito tarjeta;
 
 	public Credito() {
 	}
 
-	public Credito(TarjetaCredito tarjetaCredito, Factura factura, List<Cuota> cuotas, TarjetaCredito tarjeta) {
+	public Credito(TarjetaCredito tarjetaCredito, Factura factura, List<Cuota> cuotas) {
 		this.tarjetaCredito = tarjetaCredito;
 		this.factura = factura;
 		this.cuotas = cuotas;
-		this.tarjeta = tarjeta;
 		generarCuotas();
 	}
 
@@ -40,14 +38,6 @@ public class Credito {
 
 	public Credito(List<Cuota> cuotas) {
 		this.cuotas = cuotas;
-	}
-
-	public TarjetaCredito getTarjeta() {
-		return tarjeta;
-	}
-
-	public void setTarjeta(TarjetaCredito tarjeta) {
-		this.tarjeta = tarjeta;
 	}
 
 	public void generarCuotas() {
