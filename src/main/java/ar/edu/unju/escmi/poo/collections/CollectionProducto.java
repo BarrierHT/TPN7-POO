@@ -23,8 +23,7 @@ public abstract class CollectionProducto {
             productos.add(new Producto(2112, "Celular L7 + Primer Black - RVA TCL", 110000, "Argentina"));
             productos.add(new Producto(2113, "Celular PANTALLA 5\" QUAD CORE 1RAM 32GB Alcatel", 900000, "Argentina"));
             productos.add(new Producto(2114, "Celular QTEST NEGRO Quantum", 750000, "Argentina"));
-            productos.add(
-                    new Producto(3111, "Heladera Heladera con Freezer 317 lts blanca Columbia", 130000, "Argentina"));
+            productos.add(new Producto(3111, "Heladera Heladera con Freezer 317 lts blanca Columbia", 130000, "Argentina"));
             productos.add(new Producto(3112, "Heladera Heladera Ciclica Gafa", 160000, "Argentina"));
             productos.add(new Producto(3113, "Heladera Heladera No Frost Electrolux", 155000, "Argentina"));
             productos.add(new Producto(3114, "Heladera Heladera Ciclica R600 Drean", 280000, "Argentina"));
@@ -33,12 +32,9 @@ public abstract class CollectionProducto {
             productos.add(new Producto(4113, "Lavarropa 8514 Aurora", 200000, "Argentina"));
             productos.add(new Producto(4114, "Lavarropas Silver 8.5 Kg LG", 225000, "Argentina"));
             productos.add(new Producto(5111, "Televisor 50\" - ULTRA HD Smart LG", 165000, "Argentina"));
-            productos.add(
-                    new Producto(5112, "Televisor Smart TV 4K 50´ Sist Operativo Vidaa Noblex", 280000, "Argentina"));
-            productos.add(new Producto(5113, "Televisor Smart TV de 50\" Ultra HD borderless Android Philips", 300000,
-                    "Argentina"));
+            productos.add(new Producto(5112, "Televisor Smart TV 4K 50´ Sist Operativo Vidaa Noblex", 280000, "Argentina"));
+            productos.add(new Producto(5113, "Televisor Smart TV de 50\" Ultra HD borderless Android Philips", 300000,"Argentina"));
             productos.add(new Producto(5114, "Televisor UHD 4K Smart TV Samsung", 1950000, "Argentina"));
-
         }
     }
 
