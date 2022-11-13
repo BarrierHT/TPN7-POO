@@ -5,17 +5,17 @@ public class Producto {
     public long codigo;
     public String descripcion;
     public double precioUnitario;
-    public String origenFabriacion;
+    public String origenFabricacion;
 
     public Producto() {
 
     }
 
-    public Producto(long codigo, String descripcion, double precioUnitario, String origenFabriacion) {
+    public Producto(long codigo, String descripcion, double precioUnitario, String origenFabricacion) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precioUnitario = precioUnitario;
-        this.origenFabriacion = origenFabriacion;
+        this.origenFabricacion = origenFabricacion;
     }
 
     public long getCodigo() {
@@ -42,12 +42,18 @@ public class Producto {
         this.precioUnitario = precioUnitario;
     }
 
-    public String getOrigenFabriacion() {
-        return origenFabriacion;
+    public String getOrigenFabricacion() {
+        return origenFabricacion;
     }
 
-    public void setOrigenFabriacion(String origenFabriacion) {
-        this.origenFabriacion = origenFabriacion;
+    public void setOrigenFabricacion(String origenFabricacion) {
+        this.origenFabricacion = origenFabricacion;
     }
 
+    @Override
+    public String toString() {
+        return "Codigo: " + codigo + " Descripcion: " + descripcion + " Precio Unitario: " + precioUnitario
+                + " Origen fabricacion: "
+                + origenFabricacion;
+    }
 }

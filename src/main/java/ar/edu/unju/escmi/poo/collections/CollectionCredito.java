@@ -1,6 +1,5 @@
 package ar.edu.unju.escmi.poo.collections;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +7,7 @@ import ar.edu.unju.escmi.poo.models.Credito;
 
 public abstract class CollectionCredito {
 
-    public static List<Credito> creditos = new ArrayList<Credito>();
+    public static List<Credito> creditos;
 
     public CollectionCredito() {
 

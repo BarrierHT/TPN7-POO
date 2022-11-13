@@ -3,7 +3,6 @@ package ar.edu.unju.escmi.poo.collections;
 import java.util.ArrayList;
 import java.util.List;
 
-import ar.edu.unju.escmi.poo.models.Detalle;
 import ar.edu.unju.escmi.poo.models.Factura;
 
 public abstract class CollectionFactura {
@@ -15,10 +14,6 @@ public abstract class CollectionFactura {
     }
 
     public static List<Factura> getFacturas() {
-        List<Detalle> detalles = new ArrayList<Detalle>();
-
-        // ToDo Agregar Facturas y detalles
-
         return facturas;
     }
 

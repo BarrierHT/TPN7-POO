@@ -62,4 +62,13 @@ public class Factura {
         }
         return total;
     }
+
+    @Override
+    public String toString() {
+        return "\n\n******************** Factura ********************"
+                + "\nFecha: " + fecha + " N° de Factura: " + nroFactura
+                + "\nCliente: " + cliente.getNombre() + " " + cliente.getApellido()
+                + "\n*********************Detalles de la Factura*********************"
+                + "\n" + detalles.toString().replaceAll("\\[|\\]", "").replaceAll(", ", "") + "\n";
+    }
 }

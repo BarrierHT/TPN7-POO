@@ -44,4 +44,9 @@ public class Detalle {
     public void calcularImporte() {
         this.setImporte(this.cantidad * this.producto.getPrecioUnitario());
     }
+
+    @Override
+    public String toString() {
+        return "Producto: " + producto + " | Cantidad: " + cantidad + " | Importe: " + importe + "\n";
+    }
 }

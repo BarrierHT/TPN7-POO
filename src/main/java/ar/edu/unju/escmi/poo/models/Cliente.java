@@ -1,5 +1,10 @@
 package ar.edu.unju.escmi.poo.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ar.edu.unju.escmi.poo.collections.CollectionFactura;
+
 public class Cliente {
 
     public long dni;
@@ -13,19 +18,16 @@ public class Cliente {
 
     }
 
-    
     public Cliente(long dni, String nombre, String apellido, String direccion, int telefono, TarjetaCredito tarjeta) {
-		this.dni = dni;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.direccion = direccion;
-		this.telefono = telefono;
-		this.tarjeta = tarjeta;
-	}
+        this.dni = dni;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.tarjeta = tarjeta;
+    }
 
-
-
-	public long getDni() {
+    public long getDni() {
         return dni;
     }
 
@@ -56,22 +58,34 @@ public class Cliente {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-    
+
     public TarjetaCredito getTarjeta() {
-		return tarjeta;
-	}
+        return tarjeta;
+    }
 
+    public void setTarjeta(TarjetaCredito tarjeta) {
+        this.tarjeta = tarjeta;
+    }
 
-	public void setTarjeta(TarjetaCredito tarjeta) {
-		this.tarjeta = tarjeta;
-	}
-
-
-	public int getTelefono() {
+    public int getTelefono() {
         return telefono;
     }
 
     public void setTelefono(int telefono) {
         this.telefono = telefono;
+    }
+
+    public List<Factura> consultarCompras() {
+        List<Factura> shoppingList = new ArrayList<Factura>();
+        if (CollectionFactura.facturas != null) {
+            for (Factura fac : CollectionFactura.facturas) {
+                if (fac.getCliente().getDni() == dni) {
+                    shoppingList.add(fac);
+                }
+            }
+        } else {
+            shoppingList = null;
+        }
+        return shoppingList;
     }
 }
