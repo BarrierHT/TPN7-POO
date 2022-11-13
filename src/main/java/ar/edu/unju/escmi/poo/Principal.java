@@ -144,10 +144,11 @@ public class Principal {
 
                 for (Producto pro : products) {
 
-                    // ToDo mostrar solo productos que tengan stock
-                    // Stock stock = CollectionStock.buscarStock(pro);
+                    Stock stock = CollectionStock.buscarStock(pro);
 
-                    System.out.println("\n" + pro.toString());
+                    if (stock.getCantidad() > 0) {
+                        System.out.println("\n" + pro.toString());
+                    }
                 }
 
             } else if (option == 4) {
@@ -162,7 +163,7 @@ public class Principal {
                         System.out.println("\nEl stock del producto: " + stock.getProducto().getDescripcion()
                                 + " es de: " + stock.getCantidad());
                     } else {
-                        System.out.println("\nNo hay stock del producto");
+                        System.out.println("\nNo se cargo stock del producto");
                     }
                 } else {
                     System.out.println("\nNo se encontro el producto");
