@@ -27,8 +27,8 @@ public class FacturaTest extends TestCase {
 	@BeforeEach
 	protected void setUp() throws Exception {
 
-		CollectionCliente.getClientes();
 		CollectionTarjetaCredito.getTarjetas();
+		CollectionCliente.getClientes();
 		CollectionProducto.getProductos();
 		CollectionFactura.getFacturas();
 

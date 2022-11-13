@@ -26,12 +26,11 @@ public class CreditoTest extends TestCase { // ? Handle all Cuotas Troubles
 	@BeforeEach
 	protected void setUp() throws Exception {
 
-		CollectionCliente.getClientes();
 		CollectionTarjetaCredito.getTarjetas();
-		CollectionProducto.getProductos();
-		CollectionFactura.getFacturas();
 		CollectionCliente.getClientes();
+		CollectionProducto.getProductos();
 		CollectionStock.getStocks();
+		CollectionFactura.getFacturas();
 		// credito = CollectionCredito.creditos.get(0);
 //        System.setOut(new PrintStream(outputStreamCaptor));
 	}
