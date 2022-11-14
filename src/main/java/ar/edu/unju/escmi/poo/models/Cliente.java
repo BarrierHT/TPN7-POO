@@ -79,7 +79,7 @@ public class Cliente {
 		List<Factura> shoppingList = new ArrayList<Factura>();
 		if (CollectionFactura.facturas != null) {
 			for (Factura fac : CollectionFactura.facturas) {
-				if (fac.getCliente().getDni() == dni) {
+				if (fac.getCliente().getDni() == this.dni) {
 					shoppingList.add(fac);
 				}
 			}

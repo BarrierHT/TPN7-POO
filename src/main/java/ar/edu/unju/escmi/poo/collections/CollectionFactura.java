@@ -22,18 +22,30 @@ public abstract class CollectionFactura {
 	}
 
 	public static void agregarFactura(Factura factura) {
-		facturas.add(factura);
+		
+		try {
+			facturas.add(factura);
+		} catch (Exception e) {
+			System.out.println("\nNO SE PUEDE GUARDAR LA FACTURA");
+		}
+		
 	}
 
 	public static Factura buscarFactura(long nroFactura) {
 		Factura facturaEncontrada = null;
-		if (facturas != null) {
-			for (Factura fac : facturas) {
-				if (fac.getNroFactura() == nroFactura) {
-					facturaEncontrada = fac;
+		
+		try {
+			if (facturas != null) {
+				for (Factura fac : facturas) {
+					if (fac.getNroFactura() == nroFactura) {
+						facturaEncontrada = fac;
+					}
 				}
 			}
+		} catch (Exception e) {
+			return null;
 		}
+		
 		return facturaEncontrada;
 	}
 }

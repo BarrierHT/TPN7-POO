@@ -20,6 +20,10 @@ public class Credito {
 		generarCuotas();
 	}
 
+	public Credito(List<Cuota> cuotas) {
+		this.cuotas = cuotas;
+	}
+
 	public TarjetaCredito getTarjetaCredito() {
 		return tarjetaCredito;
 	}
@@ -36,10 +40,14 @@ public class Credito {
 		this.factura = factura;
 	}
 
-	public Credito(List<Cuota> cuotas) {
-		this.cuotas = cuotas;
+	public List<Cuota> getCuotas() {
+		return cuotas;
 	}
 
+	public void setCuotas(List<Cuota> cuotas) {
+		this.cuotas = cuotas;
+	}
+	
 	public void generarCuotas() {
 		double montoCuota = this.factura.calcularTotal() / 30;
 		int nroCuota = 0;
@@ -59,11 +67,9 @@ public class Credito {
 
 	}
 
-	public List<Cuota> getCuotas() {
-		return cuotas;
+	@Override
+	public String toString() {
+		return "Tarjeta De Credito: " + tarjetaCredito + "\n" + factura + "\nCuotas:\n" + cuotas.get(0) + cuotas.get(29);
 	}
-
-	public void setCuotas(List<Cuota> cuotas) {
-		this.cuotas = cuotas;
-	}
+	
 }

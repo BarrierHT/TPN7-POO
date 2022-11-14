@@ -7,22 +7,14 @@ import ar.edu.unju.escmi.poo.models.Credito;
 
 public abstract class CollectionCredito {
 
-    public static List<Credito> creditos;
+    public static List<Credito> creditos = new ArrayList<Credito>();
 
-    public CollectionCredito() {
-
+    public CollectionCredito(List<Credito> creditos) {
+    	CollectionCredito.creditos = creditos;
     }
 
-    public static void getCreditos() {
-        if (creditos == null) {
-            creditos = new ArrayList<Credito>();
-            creditos.add(new Credito());
-            creditos.add(new Credito());
-            creditos.add(new Credito());
-            creditos.add(new Credito());
-
-            // ToDo Agregar creditos
-        }
+    public static List<Credito> getCreditos() {
+    	return creditos;
     }
 
     public static void setCreditos(List<Credito> creditos) {
@@ -30,7 +22,12 @@ public abstract class CollectionCredito {
     }
 
     public static void agregarCredito(Credito credito) {
-
-        creditos.add(credito);
+        
+    	try {
+    		creditos.add(credito);
+		} catch (Exception e) {
+			System.out.println("\nNO SE PUDE GUARDAR EL CREDITO");
+		}
+    	
     }
 }

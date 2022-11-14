@@ -21,8 +21,8 @@ public abstract class CollectionProducto {
             productos.add(new Producto(1114, "Aire Acondicionado AA Inverter 3000 FC BGH", 250000, "Argentina"));
             productos.add(new Producto(2111, "Celular Galaxi A33 Samsung", 150000, "Argentina"));
             productos.add(new Producto(2112, "Celular L7 + Primer Black - RVA TCL", 110000, "Argentina"));
-            productos.add(new Producto(2113, "Celular PANTALLA 5\" QUAD CORE 1RAM 32GB Alcatel", 900000, "Argentina"));
-            productos.add(new Producto(2114, "Celular QTEST NEGRO Quantum", 750000, "Argentina"));
+            productos.add(new Producto(2113, "Celular PANTALLA 5\" QUAD CORE 1RAM 32GB Alcatel", 90000, "Argentina"));
+            productos.add(new Producto(2114, "Celular QTEST NEGRO Quantum", 75000, "Argentina"));
             productos.add(
                     new Producto(3111, "Heladera Heladera con Freezer 317 lts blanca Columbia", 130000, "Argentina"));
             productos.add(new Producto(3112, "Heladera Heladera Ciclica Gafa", 160000, "Argentina"));
@@ -37,7 +37,7 @@ public abstract class CollectionProducto {
                     new Producto(5112, "Televisor Smart TV 4K 50´ Sist Operativo Vidaa Noblex", 280000, "Argentina"));
             productos.add(new Producto(5113, "Televisor Smart TV de 50\" Ultra HD borderless Android Philips", 300000,
                     "Argentina"));
-            productos.add(new Producto(5114, "Televisor UHD 4K Smart TV Samsung", 1950000, "Argentina"));
+            productos.add(new Producto(5114, "Televisor UHD 4K Smart TV Samsung", 195000, "Argentina"));
         }
     }
 
@@ -46,36 +46,48 @@ public abstract class CollectionProducto {
     }
 
     public static void agregarProducto(Producto producto) {
-        if (productos.isEmpty()) {
-            productos.add(producto);
-        } else {
-            long controlCodigo = producto.getCodigo();
-            boolean band = true;
+        
+    	try {
+    		if (productos.isEmpty()) {
+                productos.add(producto);
+            } else {
+                long controlCodigo = producto.getCodigo();
+                boolean band = true;
 
-            for (Producto pro : productos) {
-                if (band) {
-                    if (pro.getCodigo() == controlCodigo) {
-                        System.out.println("\nYa existe un producto con ese codigo");
-                        band = false;
+                for (Producto pro : productos) {
+                    if (band) {
+                        if (pro.getCodigo() == controlCodigo) {
+                            System.out.println("\nYa existe un producto con ese codigo");
+                            band = false;
+                        }
                     }
                 }
-            }
-            if (band) {
-                productos.add(producto);
-            }
+                if (band) {
+                    productos.add(producto);
+                }
 
-        }
+            }
+		} catch (Exception e) {
+			System.out.println("\nNO SE PUEDE GUARDAR EL PRODUCTO");
+		}
+    	
     }
 
     public static Producto buscarProducto(long codigo) {
         Producto productoEncontrado = null;
-        if (!productos.isEmpty()) {
-            for (Producto pro : productos) {
-                if (pro.getCodigo() == codigo) {
-                    productoEncontrado = pro;
+        
+        try {
+        	if (!productos.isEmpty()) {
+                for (Producto pro : productos) {
+                    if (pro.getCodigo() == codigo) {
+                        productoEncontrado = pro;
+                    }
                 }
             }
-        }
+		} catch (Exception e) {
+			return null;
+		}
+        
         return productoEncontrado;
     }
 }

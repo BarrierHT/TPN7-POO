@@ -20,7 +20,7 @@ public abstract class CollectionCliente {
                     CollectionTarjetaCredito.tarjetas.get(0)));
             clientes.add(new Cliente(36865654, "Juan", "Perez", "Av. Boulevar 1200", 35185695,
                     CollectionTarjetaCredito.tarjetas.get(1)));
-            clientes.add(new Cliente(22574487, "Pedro", "Caseres", "Jujuy 732", 38845224,
+            clientes.add(new Cliente(111, "Pedro", "Caseres", "Jujuy 732", 38845224,
                     CollectionTarjetaCredito.tarjetas.get(2)));
         }
     }
@@ -30,19 +30,28 @@ public abstract class CollectionCliente {
     }
 
     public static void agregarCliente(Cliente cliente) {
-
-        clientes.add(cliente);
+    	
+    	try {
+    		clientes.add(cliente);
+		} catch (Exception e) {
+			System.out.println("\nNO SE PUEDE GUARDAR EL CLIENTE");
+		}
+        
     }
 
     public static Cliente buscarCliente(long dni) {
         Cliente clienteEncontrado = null;
 
-        for (Cliente cli : clientes) {
-            if (cli.getDni() == dni) {
-                clienteEncontrado = cli;
+        try {
+        	for (Cliente cli : clientes) {
+                if (cli.getDni() == dni) {
+                    clienteEncontrado = cli;
+                }
             }
-        }
-
+		} catch (Exception e) {
+			return null;
+		}
+        
         return clienteEncontrado;
     }
 }

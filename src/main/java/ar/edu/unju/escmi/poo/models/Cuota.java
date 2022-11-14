@@ -51,4 +51,11 @@ public class Cuota {
     public void setFechaVencimiento(LocalDate fechaVencimiento) {
         this.fechaVencimiento = fechaVencimiento;
     }
+
+	@Override
+	public String toString() {
+		return "Monto: " + monto + ", N° De Cuota:" + nroCuota + ", Fecha De Generacion: " + fechaGeneracion
+				+ ", Fecha De Vencimiento: " + fechaVencimiento + "\n";
+	}
+    
 }

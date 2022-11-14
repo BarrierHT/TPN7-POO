@@ -45,26 +45,32 @@ public abstract class CollectionStock {
 	}
 
 	public static void agregarStock(Stock stock) {
-		if (stocks.isEmpty()) {
-			stocks.add(stock);
-		} else {
-			Producto controlProducto = stock.getProducto();
-			boolean band = true;
-			int i = 0;
-
-			for (Stock sto : stocks) {
-				if (band) {
-					if (controlProducto == sto.getProducto()) {
-						stocks.set(i, stock);
-						band = false;
-					}
-				}
-				i++;
-			}
-			if (band) {
+		
+		try {
+			if (stocks.isEmpty()) {
 				stocks.add(stock);
+			} else {
+				Producto controlProducto = stock.getProducto();
+				boolean band = true;
+				int i = 0;
+
+				for (Stock sto : stocks) {
+					if (band) {
+						if (controlProducto == sto.getProducto()) {
+							stocks.set(i, stock);
+							band = false;
+						}
+					}
+					i++;
+				}
+				if (band) {
+					stocks.add(stock);
+				}
 			}
+		} catch (Exception e) {
+			System.out.println("\nNO SE PUEDE GUARDAR EL STOCK");
 		}
+		
 	}
 
 	public static void reducirStock(Stock stock, int cantidad) {
@@ -74,21 +80,26 @@ public abstract class CollectionStock {
 				stock.setCantidad(stock.getCantidad() - cantidad);
 				stocks.set(i, stock);
 			}
-			System.out.println("\nError");
 		} else {
-			System.out.println("\nError");
+			System.out.println("\nERROR");
 		}
 	}
 
 	public static Stock buscarStock(Producto producto) {
 		Stock stockTotal = null;
-		if (stocks != null) {
-			for (Stock sto : stocks) {
-				if (sto.getProducto() == producto) {
-					stockTotal = sto;
+		
+		try {
+			if (stocks != null) {
+				for (Stock sto : stocks) {
+					if (sto.getProducto() == producto) {
+						stockTotal = sto;
+					}
 				}
 			}
+		} catch (Exception e) {
+			return null;
 		}
+		
 		return stockTotal;
 	}
 }

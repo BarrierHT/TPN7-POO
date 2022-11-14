@@ -15,9 +15,9 @@ public abstract class CollectionTarjetaCredito {
 	public static void getTarjetas() {
 		if (tarjetas == null) {
 			tarjetas = new ArrayList<TarjetaCredito>();
-			tarjetas.add(new TarjetaCredito(2342342, LocalDate.now(), "MARCOS", 19));
-			tarjetas.add(new TarjetaCredito(4458689, LocalDate.of(2030, 1, 15), "JUAN", 35));
-			tarjetas.add(new TarjetaCredito(8754566, LocalDate.of(20230, 4, 21), "PEDRO", 7));
+			tarjetas.add(new TarjetaCredito(2342342, LocalDate.now(), "MARCOS", 600000));
+			tarjetas.add(new TarjetaCredito(4458689, LocalDate.of(2030, 1, 15), "JUAN", 600000));
+			tarjetas.add(new TarjetaCredito(8754566, LocalDate.of(2030, 4, 21), "PEDRO", 600000));
 		}
 	}
 
@@ -26,18 +26,30 @@ public abstract class CollectionTarjetaCredito {
 	}
 
 	public static void agregarTarjetaCredito(TarjetaCredito tarjeta) {
-		tarjetas.add(tarjeta);
+		
+		try {
+			tarjetas.add(tarjeta);
+		} catch (Exception e) {
+			System.out.println("\nNO SE PUEDE GUARDAR LA TARJETA DE CREDITO");
+		}
+		
 	}
 
 	public static TarjetaCredito buscarTarjetaCreddito(long numero) {
 		TarjetaCredito tarjetaEncontrada = null;
-		if (tarjetas != null) {
-			for (TarjetaCredito tarjeta : tarjetas) {
-				if (tarjeta.getNumero() == numero) {
-					tarjetaEncontrada = tarjeta;
+		
+		try {
+			if (tarjetas != null) {
+				for (TarjetaCredito tarjeta : tarjetas) {
+					if (tarjeta.getNumero() == numero) {
+						tarjetaEncontrada = tarjeta;
+					}
 				}
 			}
+		} catch (Exception e) {
+			return null;
 		}
+		
 		return tarjetaEncontrada;
 	}
 }
